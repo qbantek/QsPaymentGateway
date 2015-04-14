@@ -1,0 +1,69 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{8F868332-CD0B-4C2A-AC7B-531292BCDF2E}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>QsPaymentGateway</RootNamespace>
+    <AssemblyName>QsPaymentGateway</AssemblyName>
+    <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Web" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="AuthorizeDotNet\AuthorizeDotNetApi.cs" />
+    <Compile Include="AuthorizeDotNet\AuthorizeDotNetRequest.cs" />
+    <Compile Include="AuthorizeDotNet\AuthorizeDotNetResponse.cs" />
+    <Compile Include="Charge1\Charge1Api.cs" />
+    <Compile Include="Charge1\Charge1Request.cs" />
+    <Compile Include="Charge1\Charge1Response.cs" />
+    <Compile Include="Durango\DurangoApi.cs" />
+    <Compile Include="Durango\DurangoRequest.cs" />
+    <Compile Include="Durango\DurangoResponse.cs" />
+    <Compile Include="Gateway.cs" />
+    <Compile Include="GatewayInfo.cs" />
+    <Compile Include="GatewayRequest.cs" />
+    <Compile Include="IGatewayApi.cs" />
+    <Compile Include="IGatewayResponse.cs" />
+    <Compile Include="IGateway.cs" />
+    <Compile Include="PaymentGatewayType.cs" />
+    <Compile Include="PayPal\PayPalApi.cs" />
+    <Compile Include="PayPal\PayPalRequest.cs" />
+    <Compile Include="PayPal\PayPalResponse.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="RequestAction.cs" />
+    <Compile Include="ServiceMode.cs" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
